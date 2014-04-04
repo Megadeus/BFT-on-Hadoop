@@ -186,7 +186,7 @@ believe this cost is acceptable for many critical applications.</p>
 src="https://docs.google.com/file/d/0B7AN9bkJ1dqVekdiYl8ybzZfUmM/preview
 
 " width="600" height="480"></iframe>
-              <footer style="cursor:pointer;"> <a a onClick="crushfun1
+              <footer style="cursor:pointer;"> <a id="knowbtn" onClick="crushfun1
 
 ()" style="cursor:pointer !important;" class="button medium fa fa-
 
@@ -222,7 +222,7 @@ with real Byzantine failure observations?<br /></p>
 src="https://docs.google.com/file/d/0B7AN9bkJ1dqVQzJXNUdpSS1pNU0/preview
 
 ?pli=1" width="600" height="480"></iframe>
-              <footer > <a onClick="crushfun()"  class="button medium 
+              <footer > <a onClick="crushfun()" id="crushbtn" class="button medium 
 
 alt fa fa-info-circle" target="_new" style="cursor:pointer !
 
@@ -352,12 +352,14 @@ href="http://html5up.net">&nbsp; Layout</a> </div>
 	$('#crushyourbrain').hide();
 function crushfun(){
 	//this.hide();
+	$('#crushbtn').hide();
 	$('#crushyourbrain').toggle();
 	
 	}
 	$('#knowmoreframe').hide();
 	function crushfun1(){
 	//this.hide();
+	$('#knowbtn').hide();
 	$('#knowmoreframe').toggle();
 	
 	}
