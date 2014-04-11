@@ -27,31 +27,6 @@ public class AppletClass extends JApplet {
 	@Override
 	public void init() {
 		
-//		JScrollPane sp = new JScrollPane(ta, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED , JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//		
-//		this.add(sp);
-		
-//		MessageConsole mc = new MessageConsole(ta);
-//		
-//		mc.redirectOut();
-		
-//		this.add(ta);
-		
-//		this.setSize(1350, 650);
-		
-//		TextAreaOutputStream textout = new TextAreaOutputStream(ta);
-//		
-//		PrintStream ptextout = new TextAreaPrintStream(textout, false);
-//		
-//		System.setOut(ptextout);
-//		
-//		System.out.println("Staring Byzantine Fault Tolerant System");
-//		
-//		System.out.flush();
-//		
-//		BufferedWriter bf = new BufferedWriter( new PrintWriter(new StringWriter()));
-		
-		
 		this.setLayout(new GridLayout(4, 1));
 		
 		this.setSize(600, 300);
@@ -124,7 +99,7 @@ public class AppletClass extends JApplet {
 		
 		System.out.println("Finished!");
 		
-//		super.init();
+		super.init();
 	}
 	
 	@Override
