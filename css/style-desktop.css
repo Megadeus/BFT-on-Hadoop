@@ -52,7 +52,7 @@
 
 		body.homepage #header-wrapper
 		{
-			height: 43em;
+			height: 100vh;
 		}
 	
 	#banner-wrapper
@@ -67,9 +67,10 @@
 		#main-wrapper .main-wrapper-style2,
 		#main-wrapper .main-wrapper-style3
 		{
-			padding: 7em 0 7em 0;
+			height:100vh;
+			padding: 4em 0 4em 0;
 		}
-	
+
 	#footer-wrapper
 	{
 		padding: 7em 0 7em 0;
