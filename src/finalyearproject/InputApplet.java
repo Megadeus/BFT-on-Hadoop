@@ -19,7 +19,6 @@ public class InputApplet extends JApplet{
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
 		super.init();
 		
 		this.setLayout(new GridLayout(4, 1));
@@ -79,15 +78,6 @@ public class InputApplet extends JApplet{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 
-//				tp.insert("",  0);
-//				
-//				if(m1.isSelected())
-//					tp.append("Daily");
-//				if(m2.isSelected())
-//					tp.append("Monthly");
-//				if(m3.isSelected())
-//					tp.append("Yearly");
-				
 				final int type = m1.isSelected() ? 10 : ( m2.isSelected() ? 7 : 4);
 				
 				final boolean algorithm = a1.isSelected() ? true : false ;
@@ -96,14 +86,6 @@ public class InputApplet extends JApplet{
 				
 				ForecastMapper.End_year = type;	JobTrackerNonSpecMapper.End_year = type;
 				
-//				int algorithm = 
-						
-//				int  type =  
-//				
-//				int algorithm =  
-//				
-//				int fault_index =  
-//				
 				ByzantineFaultSystem ob = null;
 				try 
 				{
@@ -130,7 +112,6 @@ public class InputApplet extends JApplet{
 	
 	@Override
 	public void start() {
-		// TODO Auto-generated method stub
 		super.start();
 	}
 	
