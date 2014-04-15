@@ -10,10 +10,10 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 
 /**
- * @author hduser
- * 
+ * @author Vaidhyanathan, Barath, Prashanth
  */
-public class ByzantineFaultSystem {
+public class ByzantineFaultSystem 
+{
 	String mapper_class, Reducer_class, Combiner_class,
 			input_dir = "/home/hduser/workspace/newfinalyearproject/IN",
 			out_dir = "/home/hduser/workspace/newfinalyearproject/OUT";
@@ -24,24 +24,27 @@ public class ByzantineFaultSystem {
 			OUT = "/home/hduser/workspace/newfinalyearproject/OUT";
 
 	/**
-	 * @return the mapper_class
+	 * @return the Mapper_Class
 	 */
-	String getMapper_class() {
+	String getMapper_class() 
+	{
 		return mapper_class;
 	}
 
 	/**
-	 * @param mapper_class
+	 * @param Mapper_Class
 	 *            the mapper_class to set
 	 */
-	void setMapper_class(String mapper_class) {
+	void setMapper_class(String mapper_class) 
+	{
 		this.mapper_class = mapper_class;
 	}
 
 	/**
 	 * @return the reducer_class
 	 */
-	String getReducer_class() {
+	String getReducer_class() 
+	{
 		return Reducer_class;
 	}
 
@@ -49,14 +52,16 @@ public class ByzantineFaultSystem {
 	 * @param reducer_class
 	 *            the reducer_class to set
 	 */
-	void setReducer_class(String reducer_class) {
+	void setReducer_class(String reducer_class) 
+	{
 		Reducer_class = reducer_class;
 	}
 
 	/**
 	 * @return the combiner_class
 	 */
-	String getCombiner_class() {
+	String getCombiner_class() 
+	{
 		return Combiner_class;
 	}
 
@@ -64,14 +69,16 @@ public class ByzantineFaultSystem {
 	 * @param combiner_class
 	 *            the combiner_class to set
 	 */
-	void setCombiner_class(String combiner_class) {
+	void setCombiner_class(String combiner_class) 
+	{
 		Combiner_class = combiner_class;
 	}
 
 	/**
 	 * @return the input_dir
 	 */
-	String getInput_dir() {
+	String getInput_dir() 
+	{
 		return input_dir;
 	}
 
@@ -79,14 +86,16 @@ public class ByzantineFaultSystem {
 	 * @param input_dir
 	 *            the input_dir to set
 	 */
-	void setInput_dir(String input_dir) {
+	void setInput_dir(String input_dir) 
+	{
 		this.input_dir = input_dir;
 	}
 
 	/**
 	 * @return the out_dir
 	 */
-	String getOut_dir() {
+	String getOut_dir() 
+	{
 		return out_dir;
 	}
 
@@ -94,14 +103,16 @@ public class ByzantineFaultSystem {
 	 * @param out_dir
 	 *            the out_dir to set
 	 */
-	void setOut_dir(String out_dir) {
+	void setOut_dir(String out_dir) 
+	{
 		this.out_dir = out_dir;
 	}
 
 	/**
 	 * @return the mode
 	 */
-	Boolean getMode() {
+	Boolean getMode() 
+	{
 		return mode;
 	}
 
@@ -109,14 +120,16 @@ public class ByzantineFaultSystem {
 	 * @param mode
 	 *            the mode to set
 	 */
-	void setMode(Boolean mode) {
+	void setMode(Boolean mode) 
+	{
 		this.mode = mode;
 	}
 
 	/**
 	 * @return the fault_index
 	 */
-	int getFault_index() {
+	int getFault_index() 
+	{
 		return fault_index;
 	}
 
@@ -124,7 +137,8 @@ public class ByzantineFaultSystem {
 	 * @param fault_index
 	 *            the fault_index to set
 	 */
-	void setFault_index(int fault_index) {
+	void setFault_index(int fault_index) 
+	{
 		this.fault_index = fault_index;
 	}
 
@@ -140,10 +154,9 @@ public class ByzantineFaultSystem {
 	 */
 	
 	public ByzantineFaultSystem(String mapper_class, String reducer_class,
-			String input_dir, String out_dir, Boolean mode, int fault_index) throws Exception {
+			String input_dir, String out_dir, Boolean mode, int fault_index) throws Exception 
+	{
 		super();
-		
-//		new File("/home/hduser/workspace/newfinalyearproject/WebContent/new").createNewFile();
 		
 		File f = new File("/home/hduser/workspace/newfinalyearproject/OUT");
 		File f1 = new File(
@@ -169,11 +182,7 @@ public class ByzantineFaultSystem {
 		deleteDirectory(f5);
 		deleteDirectory(f6);
 		deleteDirectory(f7);
-		
-//		Properties p =  new Properties();
-//		
-//		p.load(new FileInputStream("/home/hduser/Desktop/Resources.properties"));
-//		
+
 		PrintStream out = new PrintStream("/home/hduser/workspace/newfinalyearproject/WebContent/log.txt");
 		
 		System.setOut(out);
@@ -186,8 +195,8 @@ public class ByzantineFaultSystem {
 		// setInput_dir(input_dir);
 	}
 
-	public static void main(String[] args) throws Exception {
-		
+	public static void main(String[] args) throws Exception 
+	{
 		ByzantineFaultSystem ob = new ByzantineFaultSystem("mapper_class",
 				"reducer_class",
 				"/home/hduser/workspace/newfinalyearproject/IN",
@@ -198,12 +207,17 @@ public class ByzantineFaultSystem {
 		
 	}
 
-	public static void deleteDirectory(File directory) {
-		if (directory.exists()) {
+	public static void deleteDirectory(File directory) 
+	{
+		if (directory.exists()) 
+		{
 			File[] files = directory.listFiles();
-			if (files != null) {
-				for (int i = 0; i < files.length; i++) {
-					if (files[i].isDirectory()) {
+			if (files != null) 
+			{
+				for (int i = 0; i < files.length; i++) 
+				{
+					if (files[i].isDirectory()) 
+					{
 						deleteDirectory(files[i]);
 						files[i].delete();
 					} else {

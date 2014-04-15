@@ -13,12 +13,13 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class InputApplet extends JApplet{
+public class InputApplet extends JApplet
+{
 
 	private static final long serialVersionUID = -5635183545131065745L;
 
-	@Override
-	public void init() {
+	public void init() 
+	{
 		super.init();
 		
 		this.setLayout(new GridLayout(4, 1));
@@ -73,11 +74,11 @@ public class InputApplet extends JApplet{
 		
 		final JApplet o = this;
 		
-		start_button.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
+		start_button.addActionListener(new ActionListener() 
+		{
 
+			public void actionPerformed(ActionEvent arg0) 
+			{
 				final int type = m1.isSelected() ? 10 : ( m2.isSelected() ? 7 : 4);
 				
 				final boolean algorithm = a1.isSelected() ? true : false ;
@@ -110,10 +111,8 @@ public class InputApplet extends JApplet{
 		
 	}
 	
-	@Override
 	public void start() {
 		super.start();
 	}
-	
 	
 }

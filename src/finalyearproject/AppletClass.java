@@ -16,7 +16,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class AppletClass extends JApplet {
+public class AppletClass extends JApplet 
+{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -24,8 +25,8 @@ public class AppletClass extends JApplet {
 	
 	public static boolean finished = false;
 
-	@Override
-	public void init() {
+	public void init() 
+	{
 		
 		this.setLayout(new GridLayout(4, 1));
 		
@@ -88,13 +89,13 @@ public class AppletClass extends JApplet {
 		{
 			ob = new ByzantineFaultSystem("mapper_class",
 					"reducer_class", "IN", "OUT", false , 2);
+			ob.run();
 		} 
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
-		ob.run();
-		
+
 		finished = true;
 		
 		System.out.println("Finished!");
@@ -102,24 +103,24 @@ public class AppletClass extends JApplet {
 		super.init();
 	}
 	
-	@Override
-	public void start() {
+	public void start() 
+	{
 		super.start();
 	}
 	
-	@Override
-	public void repaint() {
+	public void repaint() 
+	{
 		super.repaint();
 	}
 	
-	@Override
-	public void destroy() {
+	public void destroy() 
+	{
 		super.destroy();
 	}
 	
-	@Override
-	public void stop() {
+	public void stop() 
+	{
 		super.stop();
 	}
-	
+
 }

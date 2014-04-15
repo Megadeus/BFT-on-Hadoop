@@ -11,24 +11,25 @@ import org.apache.hadoop.mapred.Reducer;
 import org.apache.hadoop.mapred.Reporter;
 
 public class JobTrackerNonSpecReducer extends MapReduceBase implements
-		Reducer<Text, IntWritable, Text, IntWritable> {
-
-	@Override
+		Reducer<Text, IntWritable, Text, IntWritable> 
+{
 	public void reduce(Text year, Iterator<IntWritable> temp,
 			OutputCollector<Text, IntWritable> out, Reporter arg3)
-			throws IOException {
+			throws IOException 
+	{
 		long sum = 0;
 		double avg = 0.0;
 		int count = 0;
-		try {
-			while (temp.hasNext()) {
-
+		try 
+		{
+			while (temp.hasNext()) 
+			{
 				out.collect(year, new IntWritable(temp.next().get()));
 			}
-
 		}
 
-		catch (Exception e) {
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 	}

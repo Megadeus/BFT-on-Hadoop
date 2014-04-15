@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class JobTrackerSpecDriver {
+public class JobTrackerSpecDriver 
+{
 
 	private static final String tempsmresult="/home/hduser/workspace/newfinalyearproject/tempsmresult";
 
@@ -22,7 +23,8 @@ public class JobTrackerSpecDriver {
 	private static final String tempsrresult = "/home/hduser/workspace/newfinalyearproject/tempsrresult";
 	
 	public void run(Class mapperclass, Class reducerclass, String input_dir,
-			String output_dir, int fault_index) { // running the map
+			String output_dir, int fault_index) 
+	{ // running the map
 		int i, k;
 		Thread t[] = new Thread[50];
 		Thread t1[] = new Thread[50];
@@ -33,8 +35,7 @@ public class JobTrackerSpecDriver {
 		StartMapperClass ob = new StartMapperClass();
 		Thread f1 = new Thread(ob);
 		f1.start();
-		while (f1.isAlive())
-			;
+		while (f1.isAlive());
 
 		File f = new File(tempsmresult);
 
@@ -49,73 +50,83 @@ public class JobTrackerSpecDriver {
 				finalyearproject.JobTrackerNonSpecMapper.class, reducerclass,
 				path, tempsrresult + "/temp");
 
-		for (k = 0; k <= fault_index; k++) {
+		for (k = 0; k <= fault_index; k++) 
+		{
 			StartReducerClass ob1 = new StartReducerClass();
 			t1[k] = new Thread(ob1);
 			t1[k].start();
 		}
+		
 		// start remaining map task
-		for (i = 1; i <= fault_index; i++) {
+		for (i = 1; i <= fault_index; i++) 
+		{
 			StartMapperClass ob1 = new StartMapperClass();
 			t[i] = new Thread(ob1);
 			t[i].start();
 		}
+		
 		boolean isalive = true;
-		while (isalive) {
-
-			for (int j = 1; j < i; j++) {
+		while (isalive) 
+		{
+			for (int j = 1; j < i; j++)
+			{
 				isalive = false;
-				if (t[j].isAlive() == true) {
+				if (t[j].isAlive() == true) 
+				{
 					isalive = true;
 					break;
 				}
-
 			}
-
 		}
+		
 		// checking the error
-
 		// reiterate
-		try {
-			while (true) {
-				if (test( tempsmresult , tempsinput, fault_index + 1) == 1) {
+		try 
+		{
+			while (true) 
+			{
+				if (test( tempsmresult , tempsinput, fault_index + 1) == 1) 
+				{
 					break;
 				}
-
-				// startMapper(mapperclass,
-				// finalyearproject.JobTrackerNonSpecReducer.class,
-				// input_dir,"tempnsmresult/temp");
 				StartMapperClass ob2 = new StartMapperClass();
 				Thread kt = new Thread(ob2);
 				kt.start();
-				while (kt.isAlive())
-					;
+				while (kt.isAlive());
 			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} 
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
+		
 		// running the reduce
 		// checking the error and reiterate
 		// produce the output
 
 		// check for previous reduce ask to complete
 		isalive = true;
-		while (isalive) {
-
-			for (int j = 0; j < fault_index; j++) {
+		while (isalive) 
+		{
+			for (int j = 0; j < fault_index; j++) 
+			{
 				isalive = false;
-				if (t1[j].isAlive() == true) {
+				if (t1[j].isAlive() == true)
+				{
 					isalive = true;
 					break;
 				}
-
 			}
 		}
-		if (test1(path + "/part-00000", tempsinput + "/new") == 0) {
-			try {
-				while (true) {
-					if (test(tempsrresult, output_dir, fault_index + 1) == 1) {
+		
+		if (test1(path + "/part-00000", tempsinput + "/new") == 0) 
+		{
+			try 
+			{
+				while (true) 
+				{
+					if (test(tempsrresult, output_dir, fault_index + 1) == 1) 
+					{
 						break;
 					}
 
@@ -125,34 +136,38 @@ public class JobTrackerSpecDriver {
 					StartReducerClass ob1 = new StartReducerClass();
 					Thread kt = new Thread(ob1);
 					kt.start();
-					while (kt.isAlive())
-						;
-
+					while (kt.isAlive());
 				}
-			} catch (Exception e) {
+			} 
+			catch (Exception e) 
+			{
 				e.printStackTrace();
 
 			}
-		} else {
+		} 
+		else 
+		{
 			StartReducerClass.StartReducerClass1(
 					finalyearproject.JobTrackerNonSpecMapper.class,
 					reducerclass, tempsinput , tempsrresult1 + "/temp");
 
-			for (i = 0; i <= fault_index; i++) {
+			for (i = 0; i <= fault_index; i++)
+			{
 				StartReducerClass ob1 = new StartReducerClass();
 				t[i] = new Thread(ob1);
 				t[i].start();
 			}
 			isalive = true;
-			while (isalive) {
-
-				for (int j = 0; j <= fault_index; j++) {
+			while (isalive) 
+			{
+				for (int j = 0; j <= fault_index; j++) 
+				{
 					isalive = false;
-					if (t[j].isAlive() == true) {
+					if (t[j].isAlive() == true) 
+					{
 						isalive = true;
 						break;
 					}
-
 				}
 			} // checking the error
 
